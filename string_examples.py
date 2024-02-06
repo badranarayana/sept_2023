@@ -257,3 +257,122 @@ location
 'hyderabad'
 pin
 '500072'
+
+-----------------------------------------------
+  # 'capitalize',
+# 'casefold',\
+# 'center', 'count', 'encode', 'endswith', \
+# 'expandtabs', 'find', 'format', 'format_map', \
+# 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', \
+# 'isdigit', 'isidentifier', 'islower', 'isnumeric',\
+# 'isprintable', 'isspace', 'istitle', 'isupper',\
+# 'join', 'ljust', 'lower', 'lstrip', 'maketrans', \
+# 'partition', 'replace', 'rfind', 'rindex', 'rjust',\
+# 'rpartition', 'rsplit', 'rstrip', 'split', \
+# 'splitlines', 'startswith', \
+# 'strip', 'swapcase', 'title', \
+# 'translate', 'upper', 'zfill'
+
+
+
+latter = """
+Dear Mr./Mrs. {rname}, 
+I am writing to request you for a leave of {days} from {start_date} to {end_date} 
+since I have to attend to a medical emergency of a close relative. 
+As the relative is situated in {location}, I will have to be away for {days}
+
+thanks,
+{name}
+"""
+out = latter.format(rname="Megha", days='30 Days',
+                    start_date="10-01-2024",
+                    end_date="20-01-2024",
+                    location='Hyderabad',
+                    name='Badra')
+print(out)
+
+
+
+# f strings
+
+a = 10
+b = 20
+print(f" sub of a + b = {a * b}")
+
+name = "sai"
+msg = "Good Morning"
+print(f"{msg}{name}. ")
+
+# write a program to with 5 table
+num = 5
+for i in range(1, 11):
+    print(f"{num} * {i} = {num * i}")
+
+
+num = 10
+string = " {num} * {i} = {out}"
+for i in range(1, 11):
+    out = num * i
+    print(string.format(num=num, i=i, out=out))
+
+
+
+# String Examples
+
+# write a program to print vowel chars from given string
+name = "hydErabad"
+for char in name:
+    char = char.lower()
+    if char == 'a' or char == 'e' or char == 'i' or char == 'o' or char == 'u':
+        print(char)
+
+print("--------------------------------")
+vowels = ['a', 'e', 'i', 'o', 'u']
+for ch in name:
+    ch = ch.lower()
+    if ch in vowels:
+        print(ch)
+
+
+# write a program to reverse a given string? without using built in
+data = "chicago"
+#print(data[::-1])
+
+
+out = ''
+"""
+out = out + 'o' = 'o'
+out = out + 'g' = 'og'
+out = out + 'a' = 'oga'
+out = out + 'c' = 'ogac'
+out = out + 'i' = 'ogaci'
+out = out + 'h' = 'ogacih'
+out = out + 'c' = 'ogacihc'
+
+"""
+print("88888888888888888888")
+data = "chicago1tttt"
+out = ''
+for i in range(1, len(data) + 1):
+    out = out + data[-i] # data[-3]
+    print(out)
+
+print(out)
+
+# write a program to convert all user details into upper case?
+data = ['Eddddc', "RDRRddd", 'kkawknknT']
+
+output = []
+for val in data:
+    out_val = val.upper()
+    output.append(out_val)
+print(output)
+
+
+
+
+
+
+
+
+
