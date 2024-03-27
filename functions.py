@@ -301,6 +301,119 @@ print("--------------------------")
 
 example(10, 20, 30, 40, mobile_number="5513333", name='Sai', location="GUNTUR")
 
+# lambda functions in python:
+"""
+27-03-2024
+
+Reference: https://github.com/badranarayana/Python_2021/blob/main/functions.py
+Lambda functions in python:
+--------------------------
+
+* Lambda function is small anonymous(no name) function
+* A Lambda function can take any number of arguments, but can only have one expression.
+* by using 'lambda' keyword, we can create function instead of 'def'
+* lambda function returns lambda function object 
+* lambda function syntax restricted to define in single line
+
+Syntax:
+------
+ lambda <args>: expression
+
+
+Use cases:
+---------
+* frequently use lambda function as inline model for instant usage(no reusable)
+
+* sorting list by specific key
+
+* map, filter
+
+"""
+
+
+
+# add two numbers
+def Add(a, b):
+    return a + b
+
+print(Add(10, 20))
+
+func1 = lambda a, b: a + b
+print(func1(10, 20))
+
+# lambda function use cases
+data = [{'name': "sai", "age": 30},
+        {'name': "badra", "age": 25},
+        {'name': "priya", 'age': 21}]
+
+# write a logic to sort above list based age ascending
+output = sorted(data, key=lambda info: info['name'])
+print(output)
+
+# def sort_key(info):
+#     return info['name']
+#
+# output = sorted(data, key=sort_key)
+# print(output)
+
+data = ((1, 66), (3, 44), (2, 22))
+
+# write a logic to sort based on first item in every tuple
+out = sorted(data, key=lambda obj: obj[1])
+print(out)
+
+
+
+# map, reduce, filter (functional programming)
+
+data = ['a', 'b', 'c', 'd']
+# write a logic to convert above list into upper letters using map function
+# map(function_object, Iterables)
+
+out = map(lambda char: char.upper(), data)
+print(list(out))
+
+
+# write a logic produce full names in new list
+l1 = ['Sai', 'priyanka', "Badra"]
+l2 = ['M', "Muthyam", "Alavala"]
+l3 = ['PIduguralla', 'Narsaraopet','Macherla']
+# ['Sai M', 'priyanka Muthya', 'Badra Alavala']
+def func(a1, a2, a3):
+    return a1 + ' ' + a2 + "-" + a3
+
+out = map(lambda a1, a2, a3: a1 + ' ' + a2 + "-" + a3, l1, l2, l3)
+print(list(out))
+out = map(func, l1, l2, l3)
+print(list(out))
+
+# What are the difference normal/function and lambda/anonymous function?
+
+"""
+  Normal function                         Lambda function
+ ------------------                      -----------------
+ 1) we use 'def' keyword to define       1) We use 'lambda' :keyword to define it
+    normal function
+ 2) Normal function can have any number  2) It can have only single line statement
+    of statements in body                    due to syntax restriction.
+ 3) we can provide function name while   3) it is anonymous function, we can't give func name
+    defining it.
+ 4) it returns values by using 'return'  4) no return keyword used here.
+    :keyword
+ 5) it return the values                 5) it returns function object.
+
+ Examples:
+ # sum of two number                     # sum of two numbers
+ def add(a, b):                           lambda a, b: a + b
+     return a + b
+
+ 6) It can be reusable any               6) We use lambda functions as inline model and instance
+  where with function name                  purpose
+   add(10, 20)                              ex: sorting complex object . sorted(), map(), filter()
+
+"""
+
+
 
 
 
