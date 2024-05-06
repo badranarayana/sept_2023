@@ -1,0 +1,73 @@
+Scripts --> directly writing code/ can't re use the code out side the file
+test.py
+-------
+a = 10
+b = 20
+print("Sum of a and b", a + b)
+
+
+functions:
+--> reusable of code
+--> define once and reuse within the file/across project
+
+test.py
+------
+def sum(a, b):
+    return a + b
+
+sum(10, 20)
+sum(30, 40)
+
+test2.py
+-------
+from test import sum
+sum(30, 40)
+
+# object oriented programming
+--> class  --> class is an blueprint which contains
+                member variables and methods/function
+                variables --> store state/data
+                methods/function --> actions on data
+
+syntax:
+------
+
+class <class_name>:
+    # variables
+    # methods
+
+example:
+-------
+# defining class
+
+class Student:
+    school_name="ZPH" # class variable
+
+    def get_info(self):
+        print("Student Details here")
+
+# using class
+# object create
+student1 = Student() # it create an object and store student1
+
+# accessing members from class(using .)
+student1.school_name  # it gets the zph
+
+# calling methods
+student1.get_info() # python pass object reference to self implicitly
+
+# how many times can create instance for a class?
+--> we can create unlimited instances/objects of class
+
+
+
+
+
+
+
+
+
+
+
+
+
