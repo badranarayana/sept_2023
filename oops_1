@@ -1,0 +1,33 @@
+
+
+# define a class
+
+class Company:  # class name should starts with capital char
+    def __init__(self, name, location):
+        # it will called implicitly when creating instance
+        print("init function called")
+        self.name = name
+        self.loc = location
+
+    def get_company_data(self):
+        print(f"Name: {self.name}", f"location: {self.loc}")
+
+print(Company)
+# dir(object)
+#print(dir(Company))
+
+# creating object for class
+wipro = Company("Wipro", "hyderabad")
+capgemini = Company("capgemini", "bangaore")
+# print(wipro)
+# print(capgemini)
+
+# access members of class/instance
+
+wipro.get_company_data()
+capgemini.get_company_data()
+
+
+# making class dynamic by defining init/constructor method
+
+
