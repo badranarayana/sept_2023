@@ -29,5 +29,145 @@ capgemini.get_company_data()
 
 
 # making class dynamic by defining init/constructor method
+# 22/05/2024
+
+# some more examples on class and object
+# vehicle
+# data
+# brand name
+# model number
+# color
+# chasis number
+# wheel_type
+
+# action/features
+# start()
+# stop()
+# apply_break()
+# release_break()
+
+
+class Vehicle:
+    def __init__(self, brand_name, model_number,
+                     color, chasis_number, wheel_type):
+        self.brand_name = brand_name
+        self.model_number = model_number
+        self.color = color
+        self.chasis_number = chasis_number
+        self.wheel_type = wheel_type
+
+    def get_full_details(self):
+        return {
+            "brand_name": self.brand_name,
+            "model_number": self.model_number,
+            "color": self.color,
+            "c_number": self.chasis_number,
+            "w_type": self.wheel_type
+        }
+
+    def start_engine(self):
+        print("Starting engine")
+
+    def stop_engine(self):
+        print("Stop engine")
+
+    def apply_break(self):
+        print("Apply break")
+
+    def release_break(self):
+        print("Release break")
+
+
+
+# create object
+# maruthi
+maruthi_shift = Vehicle("Maruthi", "shift", "red","233422ggs33",
+                        "alloy")
+print(maruthi_shift.color)
+print(maruthi_shift.wheel_type)
+car_details = maruthi_shift.get_full_details()
+print(car_details)
+
+maruthi_shift.start_engine()
+maruthi_shift.release_break()
+maruthi_shift.apply_break()
+maruthi_shift.start_engine()
+
+
+amaze = Vehicle("Honda", "Amaze", "blue", "44jejj433", "normal")
+print(amaze.get_full_details())
+
+amaze.start_engine()
+amaze.release_break()
+amaze.apply_break()
+amaze.stop_engine()
+
+
+# printer
+# data
+# brand
+# model
+# type
+# height
+# width
+# screen_type
+# capacity(A4, A2)
+
+# feature/actions
+# print()
+# print_both_side()
+# print_single_side()
+# print_with_color()
+
+
+class Printer:
+    def __init__(self, brand, model, type, height, width,
+                 screen_type, capacity):
+        self.brand = brand
+        self.model = model
+        self.type = type
+        self.height = height
+        self.width = width
+        self.screen_type = screen_type
+        self.capacity = capacity
+
+    def print(self, page_size, both_sides, color):
+        if page_size not in self.capacity:
+            print(f"printer does not support given size {page_size},"
+                  f"it only supports {self.capacity}")
+            return
+        if color and self.type == 'color':
+            self.print_with_color(both_sides=both_sides)
+        else:
+            if both_sides:
+                self.print_both_sides()
+            else:
+                self.print_single_side()
+        # print('Printing started')
+        # print('Printing ended')
+
+    def print_both_sides(self):
+        print("Printing both sides")
+        print("print done")
+
+    def print_single_side(self):
+        print("Print single side started")
+        print("Print done")
+
+    def print_with_color(self, both_sides=True):
+        print("color print started")
+        if both_sides:
+            self.print_both_sides()
+        else:
+            self.print_single_side()
+        print("Color print Done")
+
+
+printer1 = Printer("Samsung", "abx123", "black",
+                   "4 feets", "3 feets", "touch", ("A2", "A4"))
+printer1.print("A2", False, False)
+
+
+
 
 
