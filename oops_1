@@ -169,5 +169,110 @@ printer1.print("A2", False, False)
 
 
 
+# class variables and instance variables
+"""
+# 3/6/2024
+# class members?
+--> variables
+      --> class variables
+      --> instance/self variables
+--> methods
+      --> instance method
+      --> class method
+      --> static method
+      --> properties(getter properties, setter properties)
+--> special/magic/tunder methods
+       --> __init__()
+       --> __new__()
+       --> __lt__()
+
+"""
+
+
+# example on class variables
+class MyClass:
+    a = 10  # class variable
+    b = 20  # class variable
+
+# class variables can be accessed without creating an instance of class
+
+print(MyClass.a) # className.var_name
+print(MyClass.b)
+# notes:
+# 1) class variables shares the same state/value to all instances of class
+
+obj = MyClass()
+print(obj.a)
+
+obj2 = MyClass()
+print(obj2.a)
+print("-------------------")
+# what if we change the class variables data with instance reference?
+# --> it only affects to the current instance
+obj.a = 50
+print(obj.a)
+print(obj2.a)
+obj2.a = 500
+print("____________")
+print(obj2.a) # 500
+print(obj.a) # 50
+
+# # what if we change the class variables data with class reference?
+# the update value/state will sync to all active instance of class
+# note: this change only affects if class vars not updated through instance already
+
+print("***************")
+ob1 = MyClass()
+ob2 = MyClass()
+print(ob1.a) # 10
+print(ob2.a) # 10
+
+MyClass.a = 1000
+
+print(ob1.a) # 1000
+print(ob2.a) # 1000
+print(obj.a) # 50
+print(obj2.a) # 500
+
+# note: 1. class variables shares the same state to all instances of class
+
+# instance variables/self variables
+# instance variable values are dynamic from one instance to another instance
+
+class Car:
+    def __init__(self, name, number):
+        self.name = name  # this is instance variable
+        self.number = number  # this is instance variables
+
+# instance 1
+audi = Car("Audi", "12334")
+print(audi.name) # Audi
+
+# instance 2
+amaze = Car("Honda", "62655")
+print(amaze.name) # Honda
+
+# what will happen if we change instance variable with instance?
+# the change only affects to current instance, not any other instances
+audi.name = "updated Audi"  # this only applicable for audi object
+
+print(audi.name)
+print(amaze.name)
+amaze.name = "updayted amaze"
+print(audi.name)
+print(amaze.name)
+
+
+# how to use class methods?
+# how to user instance methods?
+
+
+
+
+
+
+
+
+
 
 
